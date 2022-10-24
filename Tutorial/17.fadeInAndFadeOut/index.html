@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Membuat Efek FadeIn dan FadeOut dengan jQuery
+
+    Efek fade sebenarnya mirip dengan efek show dan hide, akan tetapi kali ini element HTML akan disembunyikan dengan mengubah transparasi-nya, yakni dari normal menjadi transparan (tersembunyi), dan sebaliknya.
+
+    Untuk membuat efek fade, kita menggunakan 2 buah method, yakni fadeIn() untuk menghadirkan sebuah elemen, dan fadeOut() untuk menyembunyikan sebuah elemen.
+
+    Sama seperti method hide() dan show(), kedua method fade ini juga bisa diatur kecepatannya menggunakan keyword “slow”, “fast” atau angka dalam satuan milisecond. -->
+    <div id="box"></div>
+    <button id="in">Fade In</button>
+    <button id="out">Fade Out</button>
+<script>
+    $(document).ready(function(){
+        // Ketika tombol FadeOut di-klik, perintah jQuery $(“#box”).fadeOut(“slow”) akan dijalankan. Hasilnya, box pink akan berubah secara perlahan menjadi transparan, lalu hilang sepenuhnya.
+        $("#in").click(function(){
+            $("#box").fadeIn("fast");
+        })
+        $("#out").click(function(){
+            $("#box").fadeOut("slow");
+        })
+    })
+</script>
+</body>
+</html>

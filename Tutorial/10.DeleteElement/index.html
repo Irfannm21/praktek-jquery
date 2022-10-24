@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Menghapus Elemen HTML dengan method remove() jQuery
+
+    Kita bisa menggunakan method remove() jQuery untuk menghapus element HTML yang sudah tampil di halaman saat ini. Method remove() akan menghapus tag saat ini, beserta seluruh isinya -->
+
+    <button id="del_css">Del Css</button>
+    <button id="del_php">Del PHP</button>
+    <button id="del_laravel">Del Laravel</button>
+    <button id="del_all">Del All</button>
+    <button id="add">Tambah baris li</button>
+    <button id="empty">Empty All</button>
+    <ul id="list">
+        <li id="val_css">Css For Design</li>
+        <li id="val_php">PHP For Programming</li>
+        <li id="val_laravel">Laravel For Framework PHP</li>
+    </ul>
+<script>
+    $(document).ready(function(){
+        $("#del_css").click(function(){
+            $("#val_css").remove();
+        })
+        $("#del_php").click(function(){
+            $("#val_php").remove();
+        })
+        $("#del_laravel").click(function(){
+            $("#val_laravel").remove();
+        })
+        $("#del_all").click(function(){
+            $("#list").remove();
+            alert("Nilau UL dan Li sudah dihapus")
+        })
+
+//         Menghapus Elemen HTML dengan Method empty() jQuery
+
+// Selain menggunakan method remove(), jQuery juga menyediakan method empty() untuk menghapus sebuah element HTML. Apa perbedaannya?
+
+// Method empty() hanya menghapus isi dari sebuah element, sedangkan element itu sendiri tidak ikut dihapus. Hal ini berbeda dengan method remove() yang menghapus isi element beserta element itu sendiri.
+        $("#add").click(function(){
+            $("#list").append("<li>Jquery Mantaappp</li>")
+        })
+
+        $("#empty").click(function(){
+            $("#list").empty();
+            alert("Element Ul dan Li sudah di hapus")
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Membuat Efek Show dan Hide dengan jQuery
+
+    Efek show adalah efek memunculkan sebuah element HTML secara perlahan, sedangkan efek hide kebalikan dari show, yakni menyembunyikan sebuah element HTML dengan perlahan. Untuk membuat kedua efek ini kita bisa menggunakan method show() dan hide() jQuery. -->
+
+        <div id="box"></div>
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <button id="toggle">Hide And Show</button>
+<script>
+    $(document).ready(function(){
+        // $("#show").click(function(){
+        //     $("#box").show();
+        // })
+        // $("#hide").click(function(){
+        //     $("#box").hide();
+        // })
+        // Tapi tunggu dulu, kenapa efeknya cepat sekali?
+
+        // jQuery juga mengizinkan kita untuk mengatur kecepatan animasi efek show() dan hide(). Caranya dengan menambahkan salah satu keyword: “slow” atau “fast” sebagai argumen method ini,
+        $("#show").click(function(){
+            $("#box").show("fast");
+        })
+        $("#hide").click(function(){
+            $("#box").hide("slow");
+        })
+
+        // Untuk pengaturan yang lebih detail, kita bisa menginput angka dalam satuan milisecond, seperti:
+        // $("#box").hide(1000);
+
+        // Method toggle() jQuery
+
+        // Selain method hide() dan show(), jQuery masih memiliki method toggle() yang berfungsi sebagai gabungan efek hide dan show.
+
+        $("#toggle").click(function(){
+            $("#box").toggle("slow")
+        })
+    })
+</script>
+</body>
+</html>

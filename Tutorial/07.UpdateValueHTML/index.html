@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cara Mengubah Nilai HTML dengan Method text() dan html()
+
+    Untuk mengubah nilai elemen HTML, caranya sangat mirip dengan mengambil elemen. Bedanya, kita menyisipkan sebuah argumen ke dalam method text() dan html().  -->
+
+    <p id="p1">
+        Javascript is Amazing
+    </p>
+
+    <p id="p2">
+        Laravel Too
+    </p>
+
+    <p>
+        Nama : <input type="text" id="nama">
+    </p>
+
+    <button id="ubah">Rubah Element</button>
+
+    <p> Hasil dari form :
+        <label for="" id="hasil"></label>
+    </p>
+<script>
+    $(document).ready(function(){
+        $("#ubah").click(function(){
+            // Perhatikan perbedaannya
+
+            // Seperti yang terlihat, method html() akan memproses tag HTML yang ada di dalam teks. Dalam contoh diatas, teks #jQuery akan menjadi tebal karena efek tag <b>. Sedangkan untuk method text(), teks akan ditampilkan apa adanya, dimana tag <b> dianggap sebagai teks biasa, bukan sebuah tag HTML.
+            $("#p1").text("<p>Backend is <b>amazing</b></p>");
+            $("#p2").html("<p><b>Front End</b> Too</p>")
+
+        //     Cara Mengubah Nilai Form HTML dengan Method val()
+
+        // Untuk form HTML, kita juga bisa mengubah nilai yang ada, atau tepatnya mengubah nilai atribut value dari objek form tersebut. Cara penggunaannya hampir sama dengan method text() dan html(), tapi kali ini kita menggunakan method val()
+
+             var val = $("#nama").val();
+             $("#hasil").html(val);
+
+        })
+
+    })
+</script>
+</body>
+</html>

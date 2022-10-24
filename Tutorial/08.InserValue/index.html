@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cara Penggunaan Method append() dan prepend() jQuery
+
+    Method append() dan prepend() bisa digunakan untuk menambah elemen HTML baru ke dalam kode HTML yang sudah ada. Method append() akan menambahkan elemen baru ke bagian akhir, sedangkan prepend() akan menambahkan elemen HTML baru ke bagian awal. -->
+    <div id="box">
+        <p>Jquery Duniailkom</p>
+    </div>
+        <button id="next">Next</button>
+        <button id="prev">Previous</button>
+        <button id="after">After</button>
+        <button id="before">Before</button>
+<script>
+    $(document).ready(function(){
+        $("#next").click(function(){
+            $("#box").append("<p>Laravel Is The Best</p>");
+        })
+        $("#prev").click(function(){
+            $("#box").prepend("<p>Back End Is Amazing</p>");
+        })
+
+        // Cara Penggunaan Method after() dan before() jQuery
+
+        // Method after() dan before() jQuery sebenarnya sangat mirip dengan append() dan prepend(). Bedanya terletak di posisi di mana element baru akan ditambahkan. Method after() dan before() akan menambahkan elemen baru di luar jQuery Selector.
+        $("#after").click(function(){
+            $("#box").after("<p>After Duniailkom</p>");
+        })
+        $("#before").click(function(){
+            $("#box").before("<p>Before Jquery Duniailkom</p>");
+        })
+    })
+</script>
+</body>
+</html>

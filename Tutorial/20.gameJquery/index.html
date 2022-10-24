@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 80px;
+            background-color: silver;
+            border: 2px solid black;
+            float: left;
+            padding: 0 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<br style="clear:both">
+<div id="box4"></div>
+<div id="box5"></div>
+<div id="box6"></div>
+<br style="clear:both">
+<div id="box7"></div>
+<div id="box8"></div>
+<div id="box9"></div>
+<br style="clear:both">
+<h2 id="hitung"></h2>
+<h1 id="hasil"></h1>
+
+<script>
+    $(document).ready(function(){
+        // Generate angka acak dari 1-9
+        var angka = Math.floor((Math.random() * 9) +1);
+
+        // tambah awalan dengan id box
+        var box_id = "box"+angka;
+
+        // buat counter
+        var jumlah_klik = 0;
+        var ketemu = "belum";
+
+        $("div").click(function(){
+            jumlah_klik++;
+            $("#hitung").html("Jumlah Klik : "+jumlah_klik);
+
+            // ubah background menjadi hijau bila benar
+            if($(this).attr("id")==box_id) {
+                $(this).css("background-color","green");
+                ketemu="sudah";
+            } else {
+                $(this).css("background-color","red");
+            }
+
+            // Cek Hasil Game
+            if((ketemu=="sudah") && (jumlah_klik <= 3)) {
+                alert("Kamu Menang");
+                $("#hasil").html("Selamat Kamu Menang")
+            }
+            if ((ketemu=="belum") && (jumlah_klik >= 3)) {
+                alert("Kamu Kalah")
+                $("#hasil").html("Kamu kalah silahkan coba lagi")
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

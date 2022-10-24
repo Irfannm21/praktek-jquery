@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Pengertian Event ready() atau The Document Ready Event
+
+Untuk memahami fungsi ready() jQuery atau secara formal disebut sebagai The Document Ready Event, kita harus paham bagaimana JavaScript bekerja.
+
+Secara sederhana, JavaScript digunakan untuk memanipulasi objek HTML seperti paragraf, tombol, form, gambar, dll. Jika kita menempatkan kode JavaScript di awal (pada bagian <head>), besar kemungkinan objek HTML ini belum tersedia. Ini terjadi karena bagian <body> baru diproses setelah bagian <head>.
+
+Event ready() jQuery men-simulasi efek dari event Onload JavaScript, tapi lebih efisien. Dengan menggunakan fungsi ready() jQuery, kode program JavaScript baru akan dijalankan setelah web browser selesai memproses tag HTML, tapi sebelum file external seperti gambar. Dengan demikian, kode JavaScript diproses dengan lebih awal daripada event Onload bawaan JavaScript.
+
+Jika anda melihat tutorial-tutorial tentang jQuery, hampir dipastikan seluruh kode akan berada di dalam event ready() ini -->
+
+<h1>Test Jquery</h1>
+<button id="tmbl">Click</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#tmbl").click(function() {
+                $(this).after('<p>Test Jquery</p>');
+            });
+        });
+    </script>
+</body>
+</html>

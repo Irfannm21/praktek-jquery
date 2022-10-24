@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Membuat Efek Animasi dengan jQuery
+
+    Salah satu alasan populernya penggunaan jQuery adalah kemudahan dalam membuat berbagai efek menarik. jQuery sendiri memiliki plugin/library tambahan yang khusus menyediakan berbagai efek animasi, yakni jQuery UI.
+
+    Namun, library jQuery ‘standar’ tetap bisa digunakan untuk membuat efek animasi, yakni dengan menggunakan method animate(). Method animate() digunakan untuk membuat animasi antara 2 buah efek CSS.
+
+    Untuk membuat efek animasi yang akan “memanjangkan” box diatas menjadi 500px, saya bisa menulis:
+    $( "#box" ).animate({ width: "500px" });
+
+    Bagaimana jika saya ingin membuat 2 buah efek sekaligus? Caranya tambahkan property CSS kedua dengan dipisah tanda koma, seperti berikut:
+    $( "#box" ).animate({ width: "500px", height: "100px" }); -->
+
+    <div id="box"></div>
+    <button id="animate">Animasi</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#animate").click(function(){
+                // $("#box").animate({
+                //     width : "80%",
+                //     height : "80px",
+                //     opacity : 0.4,
+                // });
+                // Mengatur Durasi Animasi jQuery
+
+                // Method animate() bisa ditambahkan dengan argumen kedua untuk mengatur seberapa cepat sebuah efek berlangsung. Nilai yang bisa digunakan adalah keyword seperti “slow” dan “fast”, atau bisa juga berupa angka dalam satuan millisecond.
+                $("#box").animate({
+                    width : "80%",
+                    height : "80px",
+                    opacity : 0.4,
+                },"slow");
+            })
+        })
+    </script>
+</body>
+</html>

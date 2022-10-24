@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<p id="paragraf">
+    Sedang Belajar <em>Jquery</em> di <b>Duniailkom</b>
+</p>
+<button id="ambil">Ambil</button>
+
+<p>Nama : <input type="text" id="nama"><button id="ambilNama">Ambil Nama</button></p>
+
+<select name="" id="kota">
+    <option value="Bandung">Bandung</option>
+    <option value="Jakarta">Jakarta</option>
+    <option value="Semarang">Semarang</option>
+</select>
+<button id="ambilKota">Ambil Nama Kota</button>
+<hr>
+<input type="checkbox" name="rpl" id="rpl" value="Rekayasa Perangkat Lunak">R Perangkat Lunak
+<input type="checkbox" name="anm" id="anm" value="Animasi"> Animasi
+<input type="checkbox" name="dkv" id="dkv" value="Desain Komunikasi Visual"> D Komunikasi Visual
+<button id="ambilCheck">Ambil Nilai</button>
+
+<script>
+//     Cara Mengambil nilai HTML dengan Method text() jQuery
+// Metode pertama untuk mengambil nilai sebuah elemen HTML dengan jQuery adalah menggunakan method text().
+
+    $(document).ready(function(){
+        $("#paragraf").click(function(){
+            var result = $("#paragraf").text();
+            alert(result);
+        })
+
+        // Mengambil nilai berserta tag/elemet   HTML
+        $("#ambil").click(function(){
+            var result = $("#paragraf").html();
+            alert(result);
+        })
+
+        // Cara Mengambil nilai form HTML dengan method val() jQuery
+// Baik method text() maupun html() sudah mencukupi untuk mengambil nilai yang ada disetiap element HTML. Tapi khusus untuk form, jQuery menyediakan method val(). Langsung saja kita lihat contoh penggunaannya
+        $("#ambilNama").click(function(){
+            var result = $("#nama").val();
+            alert(result);
+        })
+
+
+        // cara mengambil nilai dari select
+        $("#ambilKota").click(function(){
+            var result = $("#kota").val();
+            alert(result);
+        })
+
+        // Bagaimana dengan checkbox?
+
+        // Untuk checkbox perlu penyeleksian lebih lanjut, karena jika menggunakan method val() secara langsung, nilai form akan dikembalikan apapun kondisi checkbox (baik sudah dipilih maupun belum). Untuk mengatasi hal ini, kita bisa menggunakan selector khusus jQuery, yakni :checked.
+        $("#ambilCheck").click(function(){
+            var rpl = $("#rpl:checked").val();
+            var anm = $("#anm:checked").val();
+            var dkv = $("#dkv:checked").val();
+
+            if(rpl==undefined) {rpl="";}
+            if(anm==undefined) {anm="";}
+            if(dkv==undefined) {dkv="";}
+
+            alert (rpl+' '+anm+' '+dkv);
+        })
+    })
+</script>
+</body>
+</html>

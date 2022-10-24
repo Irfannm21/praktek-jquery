@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mengubah Lebar dan Tinggi Elemen HTML dengan jQuery
+
+    Dengan jQuery, kita bisa menggunakan method width() dan height() untuk mengatur perubahan ini. Jika kedua method ini dipanggil tanpa argumen, berarti kita ingin mengambil nilai yang ada saat ini. Namun jika diisi dengan sebuah argumen, berarti kita ingin men-set lebar dan tinggi element tersebut.
+    Ketika saya menjalankan kode jQuery ini:
+    var lebar_box = $("#box").width();
+
+    Variabel lebar_box akan berisi angka 300. Angka ini tidak lain merupakan lebar dari box tersebut. Nilai 300 ini dihitung berdasarkan pixel, yakni 300 pixel.
+
+    Begitu juga dengan method height(). Ketika saya menjalankan kode berikut:
+    var tinggi_box = $("#box").height();
+
+    Variabel tinggi_box akan berisi nilai 80, sesuai dengan property CSS.
+
+    Tapi bagaimana dengan kode ini?
+    $("#box").height(100);
+
+    Ini artinya, saya ingin men-set tinggi box menjadi 100 pixel, terlepas dari berapapun tinggi box saat ini. -->
+
+    <div id="box"></div>
+    <button id="tambahTinggi">Tambah Tinggi</button>
+    <button id="kurangiTinggi">Kurangi Tinggi</button>
+    <button id="tambahLebar">Tambah Lebar</button>
+    <button id="kurangiLebar">Kurangi Lebar</button>
+<script>
+    $(document).ready(function(){
+        $("#kurangiTinggi").click(function(){
+            var tinggi = $("#box").height();
+            $("#box").height(tinggi - 10);
+        })
+
+        $("#tambahTinggi").click(function(){
+            var tinggi = $("#box").height();
+            $("#box").height(tinggi + 10);
+        })
+
+        $("#kurangiLebar").click(function(){
+            var lebar = $("#box").width();
+            $("#box").width(lebar - 10);
+        })
+
+        $("#tambahLebar").click(function(){
+            var lebar = $("#box").width();
+            $("#box").width(lebar + 10);
+        })
+
+    })
+</script>
+</body>
+</html>

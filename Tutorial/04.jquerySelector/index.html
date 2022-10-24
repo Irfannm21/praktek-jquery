@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Pengertian Fungsi/Method getElementById() JavaScript
+
+Sebagaimana fungsi utama JavaScript, kita memerlukan JavaScript untuk memanipulasi element HTML. Langkah pertama adalah mencari element mana yang akan diubah, apakah itu tag <p>, tag <p> dengan atribut id=”penting”, tag <p> dengan atribut class=”warning”, atau sebuah tombol <button>.
+
+    Pengertian jQuery Selector
+
+jQuery memudahkan proses pencarian element HTML dengan menyediakan jQuery Selector. jQuery Selector adalah sebuah cara yang disediakan jQuery untuk mencari element HTML. Tidak hanya dengan atribut id saja, kita juga bisa menggunakan class, atribut lain, dan kombinasi diantaranya
+
+Dengan jQuery, untuk mencari sebuah element HTML yang memiliki id=”tombol”, penulisannya jauh lebih singkat:
+
+var x = $("#tombol");
+
+Karena sama seperti selector CSS, jQuery selector mendukung hampir semua penulisan selector dari CSS, berikut contohnya:
+
+    Mencari seluruh element dengan tag tertentu. Misalkan kita ingin mencari seluruh tag <p>, penulisan jQuery Selectornya adalah: $(“p”).
+    Mencari element dengan id tertentu. Misalkan ingin mencari sebuah tag HTML yang memiliki id=”belajar”, maka kita bisa menulis: $(“# belajar”).
+    Mencari element dengan class tertentu. Misalkan kita ingin mencari seluruh tag HTML yang menggunakan atribut class=”warna”, maka bisa ditulis dengan: $(“.warna”)
+
+Sama seperti CSS, kita juga bisa mengkombinasikan selector untuk mencari element yang lebih spesifik, misalnya untuk mencari tag <p> yang memiliki class=”warna” dan berada di dalam tag <div>, selectornya adalah: $(“div p.warna”). -->
+
+    <p>
+        Sebuah Paragraf tanpa atribut apapun
+    </p>
+    <p id="belajar">
+        sebuah paragraf dengan id = belajar
+    </p>
+    <p class="warna">
+        sebuah paragraf dengan class = warna
+    </p>
+    <p id="test" class="saja">
+        Sebuah paragrad dengan id = test dan class = saja
+    </p>
+    <div class="">
+        <p class="warna">sebuah paragraf tanpa attribute apapun</p>
+    </div>
+
+    <button id="action">Aksi</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#action").click(function(){
+                $("p").css("color","red");
+                $("#belajar").css("color","green");
+                $(".warna").css("color","blue");
+                $("#test.saja").css("color","yellow");
+                $("div p.warna").css("color","black");
+            });
+        });
+    </script>
+</body>
+</html>

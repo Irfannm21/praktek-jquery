@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    #paragraf {
+        width: 600px;
+        height: 80px;
+        background-color: pink;
+        line-height: 80px;
+        text-align: center;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <!-- Pengertian jQuery Event
+
+    Di dalam JavaScript, Event adalah suatu hal yang bisa dilakukan user ke sebuah element HTML, misalnya di click, double click, mouseover (cursor mouse berada diatas element), mouseout (cursor mouse sudah keluar dari atas element), dll.
+
+    Cara Penggunaan jQuery Event
+    Sebagai alternatif, jQuery menyediakan jQuery Event dengan penulisan yang lebih praktis,
+
+    Perhatikan bagaimana jQuery memudahkan penulisan event ini, sangat sederhana. Format penulisannya adalah:
+    $("jQuery_Selector").jQuery_Event(function() { ...isi event disini...   }) -->
+
+
+    <p id="paragraf">
+        Klik Disini
+    </p>
+
+    <!-- Selain event click, juga tersedia berbagai event lain, seperti dblclick, mouseenter, mouseover, mouseleave, dll. -->
+    <script>
+        $(document).ready(function(){
+            $("#paragraf").click(function(){
+                $("#paragraf").css("color","red")
+            })
+            $("#paragraf").mouseover(function(){
+                $("#paragraf").css("color","yellow");
+            });
+            $("#paragraf").mouseout(function(){
+                $("#paragraf").css("color","blue");
+            });
+            $("#paragraf").dblclick(function(){
+                $("#paragraf").css("border","solid 2px black");
+            });
+        })
+    </script>
+</body>
+</html>

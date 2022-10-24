@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pengertian Variabel $(this) dalam jQuery
+
+    Di dalam bahasa pemrograman objek (seperti JavaScript), variabel this berfungsi sebagai referensi untuk objek saat ini. Sedangkan di dalam jQuery, selector $(this) berfungsi sebagai referensi untuk element HTML saat ini.
+
+    Sebagai contoh, misalkan saya memiliki sebuah box HTML dengan kode berikut:
+    <div id="box">Click Me!</div>
+
+    Saya ingin menambahkan event click pada tag tersebut. Di dalam jQuery, saya bisa membuatnya dengan kode program:
+
+    $("#box").click(function() {
+        // kode program disini...
+        // kode program disini...
+        // kode program disini...
+    })
+
+    Kemudian bagaimana jika saya ingin agar warna background box tersebut berubah menjadi abu-abu (silver) saat di-klik? Saya bisa menambahkan kode berikut ke dalam event click :
+
+    $("#box").click(function() {
+      $("#box").css("background-color","silver");
+    })
+
+    Tidak ada hal yang baru disini, saya menggunakan method css() untuk menambahkan property CSS background-color: silver.
+
+    Kode diatas bisa juga bisa ditulis menjadi:
+
+    $("#box").click(function() {
+      $(this).css("background-color","silver");
+    })
+
+    Perhatikan bagaimana saya mengubah selector jQuery $(“#box”).css() menjadi $(this).css(). Ini berarti saya ingin mengubah warna background-color untuk elemen HTML yang saat ini sedang aktif. Karena kita berada di dalam event click $(“#box”), artinya $(this) sama dengan $(“#box”). -->
+
+    <div id="box">Click Me</div>
+<script>
+    $(document).ready(function(){
+        $("#box").click(function(){
+            $(this).css("background-color","pink");
+            $(this).html("sudah di klick");
+        })
+
+        // Kalau hasilnya sama seperti selector biasa, untuk apa repot-repot pakai $this?
+        // Dengan menggunakan selector $(this), kita bisa membuat kode program yang lebih efisien untuk berbagai selector sekaligus
+
+        // Disini saya bisa membuat 3 buah event untuk masing-masing box, yakni $(“#box1”).click(), $(“#box2”).click() dan $(“#box3”).click(). Di dalamnya, terdapat kode jQuery untuk memperbesar ukuran box.
+
+        // Kode diatas berjalan seperti rencana dan tidak salah. Namun akan jauh lebih efisien jika saya bisa membuat 1 event untuk ketiga box. Berikut perubahannya:
+
+        $("div").click(function(){
+            var tinggi = $(this).height();
+            var lebar = $(this).width();
+            $(this).height(tinggi + 10);
+            $(this).width(lebar + 10);
+
+        })
+    })
+
+</script>
+</body>
+</html>

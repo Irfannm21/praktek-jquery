@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<style>
+#table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+
+}
+
+th , td {
+    padding: 5px 10px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #87F9F7;
+}
+tr:nth:child(even){
+    background-color: #EDEDED;
+}
+tr:nth:child(odd){
+    background-color: #FFF;
+}
+</style>
+<body>
+    <p>Kota : <input type="text" id="kota"><button id="add"> Tambah Kota</button></p>
+
+    <table id="tabel" style="border: 2px;">
+        <tr id="daftar">Nama Kota</tr>
+    </table>
+
+<script>
+    $(document).ready(function(){
+        $("#add").click(function(){
+            var value = $("#kota").val();
+            var barisBaru = "<tr><td>"+value+"</td></tr>";
+            $("#daftar").append(barisBaru);
+        })
+    });
+</script>
+</body>
+</html>

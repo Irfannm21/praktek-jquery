@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 80px;
+        }
+        .add_warna {
+            background-color: aqua;
+        }
+
+        .add_border {
+            border: 2px solid black;
+        }
+
+        .add_shadow {
+            box-shadow: 7px 7px silver;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cara Menambah Class CSS dengan jQuery
+
+    jQuery menyediakan method addClass() untuk menambahkan sebuah class CSS baru ke dalam element HTML saat ini. Sebagai contoh, misalkan saya memiliki sebuah tag HTML berikut:
+    <div id="box" class="satu"></div>
+
+    Jika saya menjalankan kode:
+    $("#box").addClass("dua");
+
+    Hasilnya akan menjadi:
+    <div id="box" class="satu dua"></div> -->
+
+    <div id="box"></div>
+    <button id="addWarna">Add Warna</button>
+    <button id="addBorder">Add Border</button>
+    <button id="addShadow">Add Shadow</button>
+    <button id="remove">Remove Class</button>
+    <hr>
+    <p>
+        Mengenal Cara Penggunaan Method toggleClass jQuery
+
+Selain method addClass() dan removeClass(), jQuery masih menyediakan 1 lagi method terkait class CSS, yakni toogleClass().
+
+Method toggleClass() akan bergantian menambah dan menghapus class CSS. Jika saat ini class tidak ada, maka akan ditambahkan. Jika sudah ada, akan dihapus. Efeknya mirip dengan saklar: on atau off secara bergantian.
+    </p>
+    <button id="warna">Warna Toggle</button>
+    <button id="border">Border Toggle</button>
+    <button id="shadow">Shadow Toggle</button>
+
+<script>
+    $(document).ready(function(){
+        // Artinya, tambahkan sebuah class CSS dengan nama “add_warna” ke dalam tag HTML yang memiliki id=”#box”. Sehingga tag <div id=”#box”> akan berubah jadi:
+        $("#addWarna").click(function(){
+            $("#box").addClass("add_warna");
+        })
+        $("#addBorder").click(function(){
+            $("#box").addClass("add_border");
+        })
+        $("#addShadow").click(function(){
+            $("#box").addClass("add_shadow");
+        })
+
+        // Cara Menghapus Class CSS dengan jQuery
+
+        // Jika jQuery menyediakan method addClass() untuk menambahkan class CSS, maka juga tersedia method removeClass() yang bisa digunakan untuk menghapus class CSS.
+        $("#remove").click(function(){
+            $("#box").removeClass("add_warna")
+        })
+
+        // Mengenal Cara Penggunaan Method toggleClass jQuery
+
+        // Selain method addClass() dan removeClass(), jQuery masih menyediakan 1 lagi method terkait class CSS, yakni toogleClass().
+
+        // Method toggleClass() akan bergantian menambah dan menghapus class CSS. Jika saat ini class tidak ada, maka akan ditambahkan. Jika sudah ada, akan dihapus. Efeknya mirip dengan saklar: on atau off secara bergantian.
+        $("#warna").click(function(){
+            $("#box").toggleClass("add_warna");
+        })
+        $("#border").click(function(){
+            $("#box").toggleClass("add_border");
+        })
+        $("#shadow").click(function(){
+            $("#box").toggleClass("add_shadow");
+        })
+    })
+</script>
+</body>
+</html>

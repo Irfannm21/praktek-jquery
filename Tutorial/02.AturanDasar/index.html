@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Pengertian jQuery Object ($)
+
+    Sepanjang penggunaan jQuery, hampir selalu didahului tanda $. Tanda dollar ‘$’ (dollar sign) adalah sebuah shortcut untuk mengakses jQuery Object. Di dalam jQuery Object inilah seluruh fungsi-fungsi jQuery berada. Sebagai contoh, untuk mencari element HTML yang memiliki atribut id=”tombol”, kita bisa menulis:
+    $("#tombol")
+
+    Jika karena sesuatu hal kita tidak bisa menggunakan tanda $ (biasanya karena bentrok dengan library lain), bisa menggunakan jQuery(), seperti berikut:
+    jQuery("#tombol")
+
+    Pengertian jQuery Action / jQuery Event
+
+    Untuk bisa melakukan ‘sesuatu’ terhadap element HTML, kita tinggal menyambung penulisan jQuery Object dengan jQuery Action, atau dikenal juga dengan jQuery Event
+    Format dasarnya adalah sebagai berikut:
+    $(selector).action()
+
+    Selector digunakan untuk mencari element mana dari HTML yang akan dimanipulasi. Bisa berupa sebuah paragraf <p>, sebuah gambar <img>, atau sesuatu yang lebih kompleks, seperti element <tr> pertama dari tabel kedua
+
+    Action adalah sesuatu yang bisa kita lakukan dengan element HTML tersebut, apakah menyembunyikannya, menampilkannya, mengubah warna, menambahkan element baru, dll. Action mirip seperti Event dalam JavaScript, tetapi dengan penambahan berbagai fitur lain. Di dalam jQuery, sebuah action bisa disambung dengan action lain, atau dikenal dengan isitilah chaining. -->
+
+    <h1>Jquery Duniailkom</h1>
+    <button id="sembunyikan">sembuyikan</button>
+    <button id="tampilkan">Tampilkan</button>
+    <button id="perkecil">Perkecil</button>
+    <button id="merahkan">Merahkan</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#sembunyikan").click(function(){
+                $("h1").hide();
+            });
+
+            $("#tampilkan").click(function(){
+                $("h1").show();
+            });
+
+            $("#perkecil").click(function() {
+                $("h1").css("font-size","20px");
+            })
+
+            $("#merahkan").click(function(){
+                $("h1").css("color","red");
+            })
+        })
+    </script>
+</body>
+</html>

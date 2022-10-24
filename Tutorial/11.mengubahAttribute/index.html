@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Cara Mengambil Atribut HTML dengan jQuery
+
+    Untuk “berurusan” dengan atribut elemen HTML, jQuery menyediakan method attr(). Method ini bisa diisi dengan 1 atau 2 argumen. Jika diisi dengan 1 argumen, berarti kita ingin mengambil atribut dari element tersebut.
+    Sebagai contoh, untuk mengambil nilai atribut title dari sebuah tag HTML yang memiliki id=”paragraf”, saya bisa menulis kode jQuery berikut:
+    var nilai = $("# paragraf ").attr("title"); -->
+
+    <h2>Jquery Di Duniailkom</h2>
+    <p>
+        <a href="https://www.duniailkom.com/tutorial-belajar-jquery-cara-mengubah-atribut-html-dengan-jquery/" title="Belajar Jquery Irfan nur muhammad" target="_blank">Tutorial Jquery</a>
+        <a id="Belajar">Update Jquery</a>
+    </p>
+    <br><br>
+    <button id="ambil">Ambil Title</button>
+    <button id="update">Update a ke-2</button>
+    <p id="hasil"></p>
+<script>
+    $(document).ready(function(){
+        // Cara Mengambil Attribute HTML lewat Jquery
+        $("#ambil").click(function(){
+            // Untuk jQuery selector tag <a>, saya mencarinya dengan menggunakan “a[title]”. Di dalam CSS, selector seperti ini dikenal sebagai atribut selector. Artinya, saya mencari sebuah tag <a> yang memiliki atribut title.
+            var nilai1 = $("a[title]").attr("href");
+            var nilai2 = $("a[title]").attr("title");
+            var nilai3 = $("a[title]").attr("target");
+
+            $("#hasil").html(nilai1+"<br>"+nilai2+"<br>"+nilai3);
+
+        })
+
+        // Cara Mengubah dan Menambahkan Atribut HTML dengan jQuery
+
+        // Kita masih tetap menggunakan method attr(). Tapi kali ini dengan menulis 2 argumen. Argumen pertama berfungsi sebagai nama atribut, sedangkan argumen kedua adalah nilai dari atribut tersebut.
+
+        $("#update").click(function(){
+            $("#Belajar").attr("href","https://www.duniailkom.com/tutorial-belajar-jquery-cara-mengubah-atribut-html-dengan-jquery/")
+            $("#Belajar").attr("title","Belajar bersama Irfan Nur Muhammad");
+        })
+    })
+</script>
+</body>
+</html>
