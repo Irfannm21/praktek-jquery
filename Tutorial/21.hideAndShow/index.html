@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    $(document).ready(function(){
+        // Method untuk menyembunikan element p jika di klik
+        $("p").click(function() {
+            $(this).hide();
+        })
+
+        // Method untuk menampilkan element p jika di klik
+        $("p").click(function() {
+            $(this).hide();
+        })
+
+        // Method untuk menyembunikan dengan kecepatan lambat element p jika di klik 
+        $("p").click(function() {
+            $(this).hide("slow");
+        })
+
+        // Method untuk menampilkan element p jika di klik button
+        $("button").click(function() {
+            $("p").show();
+        })
+
+        // Method untuk menyembunikan dan menampilkan sekaligus jika element button di klik
+        $("button").click(function() {
+            $("p").hide();
+        })
+    })
+</script>
+</body>
+</html>

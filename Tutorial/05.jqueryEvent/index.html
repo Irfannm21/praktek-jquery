@@ -49,6 +49,27 @@
                 $("#paragraf").css("border","solid 2px black");
             });
         })
+
+
+        // Event untuk menyembunyikan semua element menggunakan Event Click
+        $("p").click(function(){
+            $(this).hide();
+        })
+
+         // Event untuk menyembunyikan semua element menggunakan Event Double Click
+         $("p").dblclick(function(){
+            $(this).hide();
+        })
+
+         // Event untuk menyembunyikan semua element jika pointer menuju element <p> menggunakan Event mouseenter
+         $("p").mouseenter(function(){
+            $(this).hide();
+        })
+
+        // Event untuk menyembunyikan element p jikan di click        // 
+            $("p").on("click", function(){
+            $(this).hide();
+        })
     </script>
 </body>
 </html>

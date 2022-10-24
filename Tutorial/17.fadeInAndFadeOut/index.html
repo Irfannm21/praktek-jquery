@@ -36,6 +36,16 @@
         $("#out").click(function(){
             $("#box").fadeOut("slow");
         })
+
+        // methoud untuk menampilkan div
+        $("#in").click(function() {
+            $("div").fadeTo("slow", 0.2)
+        })
+
+        // Method untuk toggle method fade in fade out
+        $("#in").click(function() {
+            $("div").fadeToggle(1000)
+        })
     })
 </script>
 </body>
